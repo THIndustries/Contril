@@ -7,7 +7,7 @@
 // ["hello", "2", ":-)"] -> ["2", ":-)"]
 
 
-string[] CreateArray(int size)
+string[] CreateArray(int size)  //функция, создающая массив
 {
     string[] array = new string[size];
     for (int i = 0; i < size; i++)
@@ -18,7 +18,7 @@ string[] CreateArray(int size)
     return array;
 }
 
-void ShowArray(string[] array)
+void ShowArray(string[] array) 
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -31,10 +31,10 @@ void ShowArray(string[] array)
     Console.WriteLine();
 }
 
-string[] SortedArray(string[] array)
+string[] SortedArray(string[] array) 
 {
     int size = 0;
-    for (int k = 0; k < array.Length; k++)
+    for (int k = 0; k < array.Length; k++) //определяю, сколько эллементов в исходном массиве, отвечающим условиям задачи и помещаю найденное значение в размер нового массива
     {
         if (array[k].Length <= 3)
         {
@@ -42,11 +42,11 @@ string[] SortedArray(string[] array)
         }
     }
     string[] sortArray = new string[size];
-    int i = 0;
-    int j = 0;
-    while (i < sortArray.Length)
+
+    int i = 0;    
+    while (i < sortArray.Length) //заполняю новый массив нужными эллементами, проверяя их оператором if
     {
-        for (j = 0; j < array.Length; j++)
+        for (int j = 0; j < array.Length; j++)
         {
             if (array[j].Length < 4)
             {
@@ -62,6 +62,7 @@ string[] SortedArray(string[] array)
     Console.Write("Заполним массив. Введите размер вашего массива: ");
     int size = Convert.ToInt32(Console.ReadLine());
     string[] myArray = CreateArray(size);
+    Console.WriteLine();
     Console.Write("Изначальный массив: ");
     ShowArray(myArray);
     Console.Write("Отсортированный массив: ");
